@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html land ="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="wight=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Заголовок страницы </title>
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css">
+<link rel="stylesheet" href="main_css.css" type="text/css">
+</head>
+</head>
+<style>
+p{
+  font-family:'Times New Roman',Times,serif;
+  font-weight:bolder;
+  font-size: 25px;
+  line-height: 35px;
+  text-indent: 70px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-style:italic;
+  background-color: white;
+background: rgba(205, 214, 219, 0.3);
+
+}
+body{
+  background: #000 url(static/shablon_v1/image/imc2.jpg); /* Фоновый цвет и фоновый рисунок*/
+
+		background-attachment: fixed; /* Фон страницы фиксируется */
+		background-size: 100%; /* Изображение повторяется по горизонтали */
+
+}
+
+</style>
+<!--><body bgcolor ="#000" background="static/shablon_v1/image/imc1.jpg" -->
+<body >
+
+  <div class="jumbotron">
+        <div class="container">
+          <p>
+              <h1>Каталог музыки</h1>
+            <a href ="/" class="btn-success btn-lg">Главная страница </a>
+            <a href ="/maps" class="btn-primary btn-lg">Карта музыки </a>
+          </p>
+        </div>
+        </div>
+      <!--  <div class="container">
+          <img src="static/shablon_v1/image/iii.jpg" class="rounded" alt="Cinque Terre">
+          <img scr="{% static 'shablon_v1/image/iii.jpg' %}" class="img-thumbnail">
+        </div>-->
+{% include "shablon_v1/uncludes/ch2.html" %}
+ {% block content %}
+    {% endblock %}
+</body>
+</html>
