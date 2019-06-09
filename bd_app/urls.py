@@ -4,7 +4,7 @@ from bd_app.models import Groap
 
 urlpatterns = [
     url(r'^$',
-    ListView.as_view( queryset=Groap.objects.all(),
+    ListView.as_view(queryset=Groap.objects.all(),
     template_name="bd_app/post.html" )),
     ]
 

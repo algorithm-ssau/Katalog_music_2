@@ -1,48 +1,73 @@
-
 <!DOCTYPE html>
-<html land ="ru">
+<html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="wight=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>gfhjkjhgf </title>
-{% load staticfiles %}
-<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css">
-
+  <title>Работа с бд</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-</head>
-<style>
+<body>
 
+<div class="container">
+  <h2>Архив групп</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" id="myBtn">Вывести</button>
 
-</style>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
 
-<body >
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Перечень групп</h4>
+        </div>
+        <div class="modal-body">
+           <table>
+               <thead>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>
+                        Группа
+                     </td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>
+                        Страна
+                     </td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>
+                        Песни
+                     </td>
+                     <td></td>
+                  </tr>
+               </tbody>
+             </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
 
-  {% for post in object_list %}
-  <a href="/bd_app{{post.id}}"> <h3> {{post.name}}  </h3></a>
-  <h3> {{post.country}}  </h3>
-  <h3> {{post.style}}  </h3>
-  <h3> {{post.age }}  </h3>
-  <h5>{{post.songs}}</h5>
-
-  {% endfor%}
-
-  <h1 align="center">По десятилетиям</h1>
-  <div class="container">
-      <div class="row">
-           <div class="btn-group btn2">
-  <button type="button" class="btn btn-dark ml-3 mr-3" name="все">Все</button>
-  <button type="button" class="btn btn-dark ml-3 mr-3 " name="1950">1950-е</button>
-  <button type="button" class="btn btn-dark ml-3 mr-3 ">1960-е</button>
-  <button type="button" class="btn btn-dark ml-3 mr-3 " name="1970">1970-е</button>
-  <button type="button" class="btn btn-dark ml-3 mr-3 ">1980-е</button>
-  <button type="button" class="btn btn-dark ml-3 mr-3 ">1990-е</button>
-  <button type="button" class="btn btn-dark ml-3 mr-3 ">2000-е</button>
-  <button type="button" class="btn btn-dark ml-3 mr-3 ">2010-е</button>
-  <button type="button" class="btn btn-dark ml-3 mr-3 ">2020-е</button>
+    </div>
   </div>
-  </div>
-  </div>
+
+</div>
+
+<script>
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal();
+    });
+});
+</script>
 
 </body>
 </html>
