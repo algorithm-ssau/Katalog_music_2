@@ -7,6 +7,8 @@ class Groap(models.Model):
    style= models.CharField("Жанр", max_length=30, default="")
    age = models.IntegerField("Год деятельности", default=1950)
    songs = models.TextField("Песни", default="")
-   
+   sostav= models.TextField("Состав группы", default="")
+   alboms = models.TextField("Альбомы", default="")
+   history =  models.TextField("История группы", default="")
 def __str__(self):
         return self.name
