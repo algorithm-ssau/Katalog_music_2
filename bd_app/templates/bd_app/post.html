@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html land ="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="wight=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>gfhjkjhgf </title>
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css">
+
+</head>
+</head>
+<style>
+
+
+</style>
+
+<body >
+
+  {% for post in object_list %}
+  <a href="/bd_app{{post.id}}"> <h3> {{post.name}}  </h3></a>
+  <h3> {{post.country}}  </h3>
+  <h3> {{post.style}}  </h3>
+  <h3> {{post.age }}  </h3>
+  <h5>{{post.songs}}</h5>
+
+  {% endfor%}
+
+  <h1 align="center">По десятилетиям</h1>
+  <div class="container">
+      <div class="row">
+           <div class="btn-group btn2">
+  <button type="button" class="btn btn-dark ml-3 mr-3" name="все">Все</button>
+  <button type="button" class="btn btn-dark ml-3 mr-3 " name="1950">1950-е</button>
+  <button type="button" class="btn btn-dark ml-3 mr-3 ">1960-е</button>
+  <button type="button" class="btn btn-dark ml-3 mr-3 " name="1970">1970-е</button>
+  <button type="button" class="btn btn-dark ml-3 mr-3 ">1980-е</button>
+  <button type="button" class="btn btn-dark ml-3 mr-3 ">1990-е</button>
+  <button type="button" class="btn btn-dark ml-3 mr-3 ">2000-е</button>
+  <button type="button" class="btn btn-dark ml-3 mr-3 ">2010-е</button>
+  <button type="button" class="btn btn-dark ml-3 mr-3 ">2020-е</button>
+  </div>
+  </div>
+  </div>
+
+</body>
+</html>
