@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <title>Работа с бд</title>
+  <title>Архив групп</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -9,9 +9,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+{% load staticfiles %}
 
 <div class="container">
-  <h2>Архив групп</h2>
+  <h2>По клику вывести список групп</h2>
   <!-- Trigger the modal with a button -->
   <button type="button" class="btn btn-info btn-lg" id="myBtn">Вывести</button>
 
@@ -26,30 +27,34 @@
           <h4 class="modal-title">Перечень групп</h4>
         </div>
         <div class="modal-body">
-           <table>
+          {% for post in object_list %}
+
+           <table><h5>______________________________</h5>
                <thead>
                </thead>
                <tbody>
                   <tr>
                      <td>
-                        Группа
+                      <h4>Группа</h4>
+                        <a href ="/bd_app{{post.id}}"><h5>{{post.name}}</h5> </h4></a>
+
                      </td>
                      <td></td>
                   </tr>
                   <tr>
                      <td>
-                        Страна
+                        <h4>Десятилетие <h5>{{post.age}}</h5></h4>
                      </td>
                      <td></td>
                   </tr>
                   <tr>
                      <td>
-                        Песни
+                        <h4>Перечень песен в десятилетие</h4> <h5>{{post.songs}}</h5>
                      </td>
                      <td></td>
                   </tr>
                </tbody>
-             </table>
+             {% endfor%}</table>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
