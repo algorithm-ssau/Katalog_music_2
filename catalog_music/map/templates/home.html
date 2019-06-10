@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Каталог музыки КТВ </title>
+  {% load staticfiles %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+p{
+  font-family:'Times New Roman',Times,serif;
+  font-weight:bolder;
+  font-size: 26px;
+  line-height: 35px;
+  text-indent: 70px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-style:italic;
+  background-color: white;
+background: rgba(205, 214, 219, 0.5);
+
+}
+li{
+  font-family:'Times New Roman',Times,serif;
+  font-weight:bolder;
+  font-size: 26px;
+  line-height: 35px;
+  text-indent: 70px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-style:italic;
+  background-color: white;
+background: rgba(205, 214, 219, 0.35);
+
+}
+body{
+  background: #000 url(static/shablon/image/imc2.jpg);
+		background-attachment: fixed;
+		background-size: 100%;
+
+}
+</style>
+
+<body>
+    <h5>HOME</h5>
+    <body >
+      <div class="jumbotron">
+            <div class="container">
+              <p>
+                  <h1>Каталог музыки</h1>
+                <a href ="/" class="btn-success btn-lg">Главная страница </a>
+                <a href="{% url 'map' %} " class="btn-primary btn-lg">Карта музыки </a>
+                <a href="{% url 'map' %}" class="btn-primary btn-lg">БД </a>
+              </p>
+            </div>
+            </div>
+            <!--{% load staticfiles %}
+            <img src="{% static "shablon/image/iii.jpg" %}" alt="My image"/>-->
+            {% include "ch2.html" %}
+             {% block content %}
+                {% endblock %}
+
+    </body>
+
+</body>
+</html>
