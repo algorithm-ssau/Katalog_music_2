@@ -22,3 +22,5 @@ def search(request):
 
 def map(request):
     return render (request,'map.html')
+def r(request):
+    return render (request,'r.html')

@@ -11,26 +11,48 @@
 </head>
 </head>
 <style>
+.h1
+{
+  margin: 100px 20px 50px 100px;
+}
 .btn1
 {
-  margin-left: 25px;
+  margin-left: 100px;
      margin-right: auto;
      width: 6em;
 }
 
 .btn
 {
-font-size: 35px;
+font-size: 25px;
+
 }
 .btn2
 {
-  margin-left: -100px;
+  margin-left: -40px;
      margin-right: auto;
      width: 6em;
 }
+.btn3
+{
+  margin-left: 300px;
+     margin-right: auto;
+     width: 6em;
+}
+a
+{
+  color:white;
+}
 
+body{
+  background: #000 url("{% static "map/image/pic.png" %}");
+background-attachment: scroll;
+		background-size: 100%;
+background-position: 2px 200px;
+}
 
 </style>
+
 <!--><body bgcolor ="#000" background="static/shablon_v1/image/imc1.jpg" -->
 <body >
   <div class="jumbotron">
@@ -74,14 +96,17 @@ font-size: 35px;
 </div>
 </div>
 </div>
-
-<button type="button" class="btn btn-dark ml-3 mr-3">Германия</button>
-<button type="button" class="btn btn-dark ml-3 mr-3 ">Россия</button>
-
 <h1></h1>
- <div class="container">
-    <img align="center" src="{% static "map/image/pic.png" %}" class="img-fluid ">
-  </div>
+<h1 align="center"> По Странам </h1>
+<div class="container">
+    <div class="row">
+         <div class="btn-group btn3">
+<button type="button" class="btn btn-dark ml-3 mr-3"><a href="/search/?q=All">Все</a></button>
+<button type="button" class="btn btn-dark ml-3 mr-3"><a href="/search/?q=country&v=Россия">Россия</button>
+<button type="button" class="btn btn-dark ml-3 mr-3 "><a href="/search/?q=country&v=Германия">Германия</button>
+<button type="button" class="btn btn-dark ml-3 mr-3 "><a href="/search/?q=country&v=Италия">Италия</button>
+</div>
+<h1> </h1>
 
 </body>
 </html>
