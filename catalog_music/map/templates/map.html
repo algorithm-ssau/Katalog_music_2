@@ -33,36 +33,43 @@ font-size: 25px;
      margin-right: auto;
      width: 6em;
 }
-.btn3
+.rf
 {
-  margin-left: 300px;
+  margin-left: auto;
      margin-right: auto;
-     width: 6em;
+     width: 4em;
 }
+
 a
 {
   color:white;
 }
 
 body{
-  background: #000 url("{% static "map/image/pic.png" %}");
+background: #D3D3D3;
 background-attachment: scroll;
 		background-size: 100%;
 background-position: 2px 200px;
 }
 
+.image-center
+{
+  display:block;
+  margin: auto;
+}
 </style>
-
-<!--><body bgcolor ="#000" background="static/shablon_v1/image/imc1.jpg" -->
+<!--   background: #000 url("{% static "map/image/pic.png" %}");-->
 <body >
-  <div class="jumbotron">
-        <div class="container">
-          <p>
-              <h1>Каталог музыки</h1>
-            <a href ="/" class="btn-success btn-lg">Главная страница </a>
-          </p>
-        </div>
-        </div>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+        <h5 class="my-0 mr-md-auto font-weight-normal">Каталог музыки</h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+          <a class="p-2 text-dark" href="/">Главная страница</a>
+          <a class="p-2 text-dark" href="{% url 'map' %}">Карта музыки</a>
+          <a class="p-2 text-dark" href="{% url 'r' %}">О разработчиках</a>
+        </nav>
+        <a class="btn btn-outline-primary" href="#">Sign up</a>
+      </div>
+
   <h1 align="center">По жанрам </h1>
   <div class="container">
   <div class="row">
@@ -97,16 +104,42 @@ background-position: 2px 200px;
 </div>
 </div>
 <h1></h1>
-<h1 align="center"> По Странам </h1>
+<!--<h1 align="center"> По Странам </h1>
 <div class="container">
     <div class="row">
          <div class="btn-group btn3">
 <button type="button" class="btn btn-dark ml-3 mr-3"><a href="/search/?q=All">Все</a></button>
-<button type="button" class="btn btn-dark ml-3 mr-3"><a href="/search/?q=country&v=Россия">Россия</button>
-<button type="button" class="btn btn-dark ml-3 mr-3 "><a href="/search/?q=country&v=Германия">Германия</button>
-<button type="button" class="btn btn-dark ml-3 mr-3 "><a href="/search/?q=country&v=Италия">Италия</button>
-</div>
-<h1> </h1>
+<button type="button" class="btn btn-dark ml-3 mr-3"><a href="/search/?q=country&v=Россия">Россия</a></button>
+<button type="button" class="btn btn-dark ml-3 mr-3 "><a href="/search/?q=country&v=Германия">Германия</a></button>
+<button type="button" class="btn btn-dark ml-3 mr-3 "><a href="/search/?q=country&v=Италия">Италия</a></button>
+</div></div></div>-->
 
+      <div class="row">
+
+        <div class="col-lg-3 rf">
+          <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+" style="width: 140px; height: 140px;">
+          <h2><a href="/search/?q=country&v=Россия">Россия</a></h2>
+          <p>Описание России</p>
+          <p><a class="btn btn-default" href="/russia" role="button">Открыть »</a></p>
+        </div>
+
+        <div class="col-lg-3 rf">
+          <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+" style="width: 140px; height: 140px;">
+          <h2>Германия</h2>
+          <p>Описание Германии</p>
+          <p><a class="btn btn-default" href="#" role="button">Открыть »</a></p>
+
+        </div>
+        <div class="col-lg-3 rf">
+          <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+" style="width: 140px; height: 140px;">
+          <h2>Италия</h2>
+          <p>Описание Италии</p>
+          <p><a class="btn btn-default" href="#" role="button">Открыть »</a></p>
+        </div>
+      </div>
+
+        <div class="image-wrap">
+  <img src="{% static "map/image/pic.png" %}" width="1200" height="622"  class="image-center">
+</div>
 </body>
 </html>
