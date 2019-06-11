@@ -11,5 +11,13 @@ class Group(models.Model):
     alboms = models.TextField("Альбомы", default="")
     history =  models.TextField("История группы", default="")
 
-    def __str__(self):
+class Country(models.Model):
+
+    namec = models.CharField("Название Страны", max_length=200, default="")
+    countryo = models.TextField("Краткое описание страны", max_length=200, default="")
+    countryop= models.TextField("Описание страны", max_length=100000, default="")
+
+
+
+def __str__(self):
         return self.name

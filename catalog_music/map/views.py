@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
-from map.models import Group
+from map.models import Group, Country
+
 
 def home(request):
     return render (request, 'home.html')
@@ -17,10 +18,21 @@ def search(request):
         else:
             if(search_category == "age"):
                 groups = Group.objects.filter(age=value)
+            else:
+                if(search_category == "country"):
+                 groups = Group.objects.filter(country=value)
     return render (request,'search.html', {'groups': groups},)
 
 
 def map(request):
-    return render (request,'map.html')
+
+        country = Country.objects.all()
+        return render (request,'map.html', {'country': country})
+
+def contr(request):
+    search_category = request.GET.get('q', None)
+    c = Country.objects.filter(namec=search_category)
+    return render (request,'c.html', {'c': c},)
+
 def r(request):
     return render (request,'r.html')
