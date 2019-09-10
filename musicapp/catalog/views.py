@@ -1,6 +1,13 @@
 from django.shortcuts import render
 from catalog.models import Year, Group, Album
 
+def main(request):
+    return render(request, 'main.html', {})
+
+
+def about(request):
+    return render(request, 'about.html', {})
+
 def catalog(request):
     years = Year.objects.all()
     return render(request, 'catalog.html', {'years': years})

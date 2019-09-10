@@ -1,26 +1,61 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<ul class="menu">
+        <li><a href="{% url 'main' %}">Главная</a></li>
+        <li><a href="{% url 'catalog' %}">Каталог</a></li>
+        <li><a href="{% url 'about' %}">О сайте</a></li>
+</ul>
 <div class="container">
-    <div class="row">
+    <div class="card-columns">
         {% for album in albums %}
-            <div class="col-sm-3">
                     <div class="card">
                         <img src="{{album.image}}" class="card-img-top">
                         <div class="card-body">
                             <h4 class="card-title">{{album.name}}</h4>
-                            <p>Песни альбома:</p>
-                            {{album.description}}
-                            <br>
-                            {{album.description}}
+                            <p class="card-text">{{album.description}}</p>
                         </div>
                     </div>
-            </div>
         {% endfor %}
     </div>
 </div>
 
 <style type="text/css">
-.image {
-    width: 200px;
-    height: 200px;
+
+ul.menu 
+{
+	list-style: none; 
+	margin: 0; 
+	padding-left: 0;
+	margin-top:25px; 
+	background: #66b6c4; 
+	height: 50px; 
+	opacity: .6;
 }
+
+.menu a 
+{
+	text-decoration: none; 
+	background:#66b6c4;
+	color: white; 
+	padding:0px 20px; 
+	font-family: arial; 
+	line-height:50px; 
+	display: block; 
+	-moz-transition: all 0.3s 0.01s ease;
+	-o-transition: all 0.3s 0.01s ease;
+	-webkit-transition: all 0.3s 0.01s ease;
+	font-size: 17px;
+	opacity: .9;
+}
+
+.menu a:hover
+{
+	background:#B06B4A;
+}
+
+.menu li 
+{
+	float: none;
+	display: inline-block;
+}
+
 </style>

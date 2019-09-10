@@ -4,20 +4,8 @@
         <li><a href="{% url 'catalog' %}">Каталог</a></li>
         <li><a href="{% url 'about' %}">О сайте</a></li>
 </ul>
-<div class="container">
-    <div class="card-columns">
-        {% for group in groups %}
-                    <div class="card">
-                        <img src="{{group.image}}" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">{{group.name}}</h5>
-                            <p class="card-text">{{group.description}}</p>
-                            <a href="{% url 'albums' group.name %}" class="btn btn-primary">Посмотреть альбомы</a>
-                        </div>
-                    </div>
-        {% endfor %}
-    </div>
-</div>
+ГЛАВНАЯ СТРАНИЦА
+
 
 <style type="text/css">
     

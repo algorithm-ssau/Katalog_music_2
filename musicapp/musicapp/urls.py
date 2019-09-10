@@ -19,6 +19,8 @@ from catalog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.main, name='main'),
+     path('about/', views.about, name='about'),
     path('catalog/', views.catalog, name='catalog'),
     path('<str:year>/', views.groups, name='groups'),
     path('albums/<str:group_name>/', views.albums, name='albums')
