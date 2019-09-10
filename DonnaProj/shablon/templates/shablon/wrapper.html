@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html land ="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="wight=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Каталог музыки КТВ </title>
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css">
+
+</head>
+</head>
+<style>
+p{
+  font-family:'Times New Roman',Times,serif;
+  font-weight:bolder;
+  font-size: 26px;
+  line-height: 35px;
+  text-indent: 70px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-style:italic;
+  background-color: white;
+background: rgba(205, 214, 219, 0.5);
+
+}
+li{
+  font-family:'Times New Roman',Times,serif;
+  font-weight:bolder;
+  font-size: 26px;
+  line-height: 35px;
+  text-indent: 70px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-style:italic;
+  background-color: white;
+background: rgba(205, 214, 219, 0.35);
+
+}
+body{
+  background: #000 url(static/shablon/image/imc2.jpg);
+		background-attachment: fixed;
+		background-size: 100%;
+
+}
+
+</style>
+<!--><body bgcolor ="#000" background="static/shablon_v1/image/imc1.jpg" -->
+<body >
+
+  <div class="jumbotron">
+        <div class="container">
+          <p>
+              <h1>Каталог музыки</h1>
+            <a href ="/" class="btn-success btn-lg">Главная страница </a>
+            <a href ="/maps" class="btn-primary btn-lg">Карта музыки </a>
+          </p>
+        </div>
+        </div>
+        <!--{% load staticfiles %}
+        <img src="{% static "shablon/image/iii.jpg" %}" alt="My image"/>-->
+{% include "shablon/uncludes/ch2.html" %}
+ {% block content %}
+    {% endblock %}
+</body>
+</html>
