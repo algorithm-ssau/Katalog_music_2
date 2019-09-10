@@ -1,10 +1,10 @@
 from django.db import models
 
 class Year(models.Model):
-    year = models.DateField(verbose_name='Год')
+    year = models.IntegerField(verbose_name='Год')
 
     def __str__(self):
-        return str(self.year).split('-')[0]
+        return str(self.year)
 
 class Group(models.Model):
     year = models.ForeignKey(Year, on_delete=models.CASCADE, null=True)

@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from catalog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('catalog/', views.catalog, name='catalog'),
+    path('<str:year>/', views.groups, name='groups'),
+    path('albums/<str:group_name>/', views.albums, name='albums')
 ]
