@@ -1,9 +1,10 @@
+{% load staticfiles %}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <ul class="menu">
         <li><a href="{% url 'main' %}">Главная</a></li>
         <li><a href="{% url 'catalog' %}">Каталог</a></li>
-        <li><a href="{% url 'about' %}">О сайте</a></li>
 </ul>
+<body class="back_scroll">
 <div class="container">
     <div class="card-columns">
         {% for group in groups %}
@@ -18,7 +19,7 @@
         {% endfor %}
     </div>
 </div>
-
+</body>
 <style type="text/css">
     
     ul.menu 
@@ -58,5 +59,11 @@
         float: none;
         display: inline-block;
     }
+	.back_scroll {
+    background-image:url({% static 'image/back.jpg' %});
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+}
     
     </style>

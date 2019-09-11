@@ -1,10 +1,10 @@
+{% load staticfiles %}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<ul class="menu">
-        <li><a href="{% url 'main' %}">Главная</a></li>
-        <li><a href="{% url 'catalog' %}">Каталог</a></li>
-        <li><a href="{% url 'about' %}">О сайте</a></li>
-</ul>
-ГЛАВНАЯ СТРАНИЦА
+
+
+<html>
+<head>
+<title>Сайт о музыке</title>
 
 
 <style type="text/css">
@@ -45,6 +45,36 @@
     {
         float: none;
         display: inline-block;
-    }
-    
-    </style>
+    }	
+	
+	.back_scroll {
+    background-image:url({% static 'image/back.jpg' %});
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+}
+    .text {
+    text-align:  center;
+    color: #000000;
+    font-size: 18px;
+    font-family: arial;
+    width: 100%;
+	
+    </style>	
+</head>
+
+<body class="back_scroll">
+
+<ul class="menu">
+        <li><a href="{% url 'main' %}">Главная</a></li>
+        <li><a href="{% url 'catalog' %}">Каталог</a></li>
+</ul>
+
+<br>
+
+<div class="text">
+     <p>Данный сайт посвящен музыкальным группам. Здесь вы можете найти информацию о разных музыкальных группах и их творчестве.</p>
+</div>
+
+</body>
+</html>

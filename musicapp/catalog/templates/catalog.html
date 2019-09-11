@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -10,10 +11,9 @@
   <ul class="menu">
         <li><a href="{% url 'main' %}">Главная</a></li>
         <li><a href="{% url 'catalog' %}">Каталог</a></li>
-        <li><a href="{% url 'about' %}">О сайте</a></li>
 </ul>
 </head>
-<body >
+<body class="back_scroll">
     <h1 align ="center">КАТАЛОГ МУЗЫКИ</h1>
     <h1 align ="center">По десятилетиям</h1>
     <div class="top_bar">
@@ -32,7 +32,6 @@
 
 .top_bar{
      text-align: center;
-     background-color: #FFF;
 }
     
     ul.menu 
@@ -72,6 +71,14 @@
         float: none;
         display: inline-block;
     }
+	
+	.back_scroll {
+    background-image:url({% static 'image/back.jpg' %});
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+}
+
     
 
 </style>
