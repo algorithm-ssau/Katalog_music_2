@@ -1,0 +1,92 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Каталог режиссеров</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <ul class="menu">
+        <li><a href="{% url 'main' %}">Главная</a></li>
+        <li><a href="{% url 'catalog' %}">Каталог</a></li>
+</ul>
+</head>
+<body class="back_scroll">
+    <h1 align ="center">Режиссеры</h1>   
+    <div class="card-columns">
+        {% for i in directors %}
+			<a class="card" style="width: 285px; height: 200" href="{% url 'films' i.name %}">                       
+                        <div class="card-body" >
+							<image class="card-img-top" width="180" height="285" src={{i.image}} > </image>
+                            <h5 class="card-title">{{i.name}}</h5>
+                            <p class="card-text">{{i.description}}</p>
+                        </div>
+                    </a>
+           <!-- <a class="btn btn-primary"  href="{% url 'films' i.name %}">{{i.name}}</a> -->
+        {% endfor %}
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<style>
+
+
+.top_bar{
+     text-align: center;
+}
+    
+    ul.menu 
+    {
+        list-style: none; 
+        margin: 0; 
+        padding-left: 0;
+        margin-top:25px; 
+        background: #d500ff; 
+        height: 50px; 
+        opacity: .6;
+    }
+    
+    .menu a 
+    {
+        text-decoration: none; 
+        background:#d500ff; 
+        color: white; 
+        padding:0px 20px; 
+        font-family: arial; 
+        line-height:50px; 
+        display: block; 
+        -moz-transition: all 0.3s 0.01s ease;
+        -o-transition: all 0.3s 0.01s ease;
+        -webkit-transition: all 0.3s 0.01s ease;
+        font-size: 17px;
+        opacity: .9;
+    }
+    
+    .menu a:hover
+    {
+        background:#B06B4A;
+    }
+    
+    .menu li 
+    {
+        float: none;
+        display: inline-block;
+    }
+	
+	.back_scroll {
+    background-image:url({% static 'image/back.jpg' %});
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+}
+
+    
+
+</style>
+
+</html>

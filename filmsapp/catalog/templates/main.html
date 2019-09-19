@@ -1,0 +1,83 @@
+{% load staticfiles %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<html>
+<head>
+<title>Сайт о кино</title>
+
+
+<style type="text/css">
+    
+    ul.menu 
+    {
+        list-style: none; 
+        margin: 0; 
+        padding-left: 0;
+        margin-top:25px; 
+        background: #d500ff; 
+        height: 50px; 
+        opacity: .6;
+    }
+    
+    .menu a 
+    {
+        text-decoration: none; 
+        background:#d500ff;
+        color: white; 
+        padding:0px 20px; 
+        font-family: arial; 
+        line-height:50px; 
+        display: block; 
+        -moz-transition: all 0.3s 0.01s ease;
+        -o-transition: all 0.3s 0.01s ease;
+        -webkit-transition: all 0.3s 0.01s ease;
+        font-size: 17px;
+        opacity: .9;
+    }
+    
+    .menu a:hover
+    {
+        background:#d500ff;
+    }
+    
+    .menu li 
+    {
+        float: none;
+        display: inline-block;
+    }	
+	
+	.back_scroll {
+    background-image:url({% static 'image/back.jpg' %});
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+}
+    .text {
+    text-align:  center;
+    color: #000000;
+    font-size: 20px;
+    font-family: arial;
+    width: 100%;
+	
+    </style>	
+</head>
+
+<body class="back_scroll">
+
+<ul class="menu">
+        <li><a href="{% url 'main' %}">Главная</a></li>
+        <li><a href="{% url 'catalog' %}">Каталог</a></li>
+</ul>
+
+<br>
+
+<div class="text">
+     <p>Сайт содержит информацию о различных кинорежиссёрах и об их фильмах.</p>
+</div>
+<center>
+<img src="{% static 'image/Main.jpg' %}" width="960" height="540" align="middle">
+</center>
+
+</body>
+</html>
