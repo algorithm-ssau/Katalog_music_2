@@ -1,25 +1,12 @@
 {% load staticfiles %}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<ul class="menu">
-        <li><a href="{% url 'main' %}">Главная</a></li>
-        <li><a href="{% url 'catalog' %}">Каталог</a></li>
-		<li><a href="{% url 'about' %}">О сайте</a></li>
-</ul>
-<body class="back_scroll">
-<div class="container">
-    <div class="card-columns">
-        {% for film in films %}
-                    <div class="card">
-                        <iframe width="560" height="315" src={{film.trailer}} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="opacity: .9; padding: 10px" class="card-img-top"></iframe>
-                        <div class="card-body">
-                            <h5 class="card-title">{{film.name}}</h5>
-                            <p class="card-text">{{film.description}}</p>
-                        </div>
-                    </div>
-        {% endfor %}
-    </div>
-</div>
-</body>
+
+
+<html>
+<head>
+<title>О сайте</title>
+
+
 <style type="text/css">
     
     ul.menu 
@@ -28,7 +15,7 @@
         margin: 0; 
         padding-left: 0;
         margin-top:25px; 
-        background: #66b6c4; 
+        background: #d500ff; 
         height: 50px; 
         opacity: .6;
     }
@@ -36,7 +23,7 @@
     .menu a 
     {
         text-decoration: none; 
-        background:#66b6c4;
+        background:#d500ff;
         color: white; 
         padding:0px 20px; 
         font-family: arial; 
@@ -48,22 +35,47 @@
         font-size: 17px;
         opacity: .9;
     }
+    
     .menu a:hover
     {
-        background:#B06B4A;
+        background:#d500ff;
     }
     
     .menu li 
     {
         float: none;
         display: inline-block;
-    }
-    
+    }	
+	
 	.back_scroll {
     background-image:url({% static 'image/back.jpg' %});
     background-repeat: no-repeat;
     background-attachment:fixed;
     background-size: cover;
 }
-    
-    </style>
+    .text {
+    text-align:  center;
+    color: #000000;
+    font-size: 20px;
+    font-family: arial;
+    width: 100%;
+	
+    </style>	
+</head>
+
+<body class="back_scroll">
+
+<ul class="menu">
+        <li><a href="{% url 'main' %}">Главная</a></li>
+        <li><a href="{% url 'catalog' %}">Каталог</a></li>
+		<li><a href="{% url 'about' %}">О сайте</a></li>
+</ul>
+
+<br>
+
+<div class="text">
+     <p>Сайт содержит список режиссеров и их работы. </p>
+</div>
+
+</body>
+</html>

@@ -11,5 +11,8 @@ def catalog(request):
 def films(request, director):
     films = Film.objects.filter(director__name=director)
     return render(request, 'groups.html', {'films': films})
+    
+def about(request):
+    return render(request, 'about.html', {})
 
 
